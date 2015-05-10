@@ -1,4 +1,4 @@
-# deployment_parse : Ruby Deployment analysis tools
+# bosh_deployment_analyzer : Ruby Deployment analysis tools
 
 ## Usage
 
