@@ -125,6 +125,7 @@ def print_pool(pool)
   puts "- Name: #{pool["name"]}"
   puts "  Size: #{pool["size"]}"
   puts "  Stemcell: #{pool["stemcell"]}"
+  puts "  Cloud Properties: #{pool["cloud_properties"]}"
   puts ""
 end
 
