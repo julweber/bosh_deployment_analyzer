@@ -6,6 +6,7 @@
 
 require 'yaml'
 require 'pp'
+require 'erb'
 
 def print_releases(releases)
   puts "----- Releases -----"
@@ -184,12 +185,16 @@ def print_used_templates(deployment)
   puts ""
 end
 
+def read_deployment_yaml(yml_file)
+  YAML.load(ERB.new(File.read(yml_file)).result)
+end
+
 def main
   yml_file = ARGV[0]
 
   puts "Input File: #{yml_file}"
 
-  dep = YAML.load_file(yml_file)
+  dep = read_deployment_yaml yml_file
 
   releases = dep["releases"]
   jobs = dep["jobs"]
